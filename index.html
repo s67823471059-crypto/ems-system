@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>หน่วยบริการการแพทย์ฉุกเฉินพระมงกุฎเกล้า</title>
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+:root{
+ --primary:#002b5c;
+ --secondary:#0a58ca;
+ --light:#f5f7fb;
+}
+
+body{
+ font-family:'Prompt',sans-serif;
+ background:var(--light);
+}
+
+/* HEADER */
+.header{
+ background:var(--primary);
+ color:white;
+ padding:15px 0;
+}
+.header h5{margin:0;font-weight:600;}
+.header small{opacity:0.85}
+
+/* NAV */
+.navbar{
+ background:white;
+ box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+.nav-link{font-weight:500}
+
+/* BANNER */
+.banner{
+ position:relative;
+ height:320px;
+ background:url('img/banner.jpg') center/cover no-repeat;
+}
+.banner::after{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:rgba(0,0,0,0.45);
+}
+.banner-content{
+ position:absolute;
+ inset:0;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ color:white;
+ text-align:center;
+}
+
+/* CARD */
+.card-news{
+ border:none;
+ border-radius:12px;
+ box-shadow:0 4px 12px rgba(0,0,0,0.08);
+ transition:0.2s;
+}
+.card-news:hover{
+ transform:translateY(-3px);
+}
+
+/* QUICK LINKS */
+.quick-btn{
+ display:block;
+ padding:15px;
+ border-radius:12px;
+ background:var(--primary);
+ color:white;
+ text-decoration:none;
+ margin-bottom:10px;
+}
+.quick-btn:hover{
+ background:var(--secondary);
+}
+
+/* FOOTER */
+.footer{
+ background:var(--primary);
+ color:white;
+ padding:20px;
+ margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header text-center">
+ <h5>หน่วยบริการการแพทย์ฉุกเฉินพระมงกุฎเกล้า</h5>
+ <small>โรงพยาบาลพระมงกุฎเกล้า กรมแพทย์ทหารบก</small>
+</div>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg">
+ <div class="container">
+  <a class="navbar-brand fw-bold" href="#">EMS PMK</a>
+  <div class="collapse navbar-collapse">
+   <ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a class="nav-link" href="#">หน้าแรก</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">ข่าวสาร</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">เกี่ยวกับเรา</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">ติดต่อ</a></li>
+    <li class="nav-item"><a class="nav-link text-primary fw-bold" href="ems.html">🚑 เข้าระบบ EMS</a></li>
+    <li class="nav-item"><a class="nav-link text-success fw-bold" href="dashboard.html">📊 Dashboard</a></li>
+   </ul>
+  </div>
+ </div>
+</nav>
+
+<!-- BANNER -->
+<div class="banner">
+ <div class="banner-content">
+  <h2 class="fw-bold">ระบบการแพทย์ฉุกเฉิน (EMS)</h2>
+  <p>Stroke Fast Track | Command Center | Real-time Monitoring</p>
+ </div>
+</div>
+
+<!-- CONTENT -->
+<div class="container mt-4">
+
+<div class="row">
+
+<!-- NEWS -->
+<div class="col-md-8">
+ <h4 class="mb-3">📢 ข่าวสาร / ประกาศ</h4>
+
+ <div class="card card-news p-3 mb-3">
+  <h5>🚑 อบรมการช่วยชีวิตขั้นสูง (ALS)</h5>
+  <p>หน่วย EMS จัดฝึกอบรมบุคลากรด้านการช่วยชีวิตขั้นสูง...</p>
+ </div>
+
+ <a href="pdf/stroke.pdf" target="_blank">
+  <div class="card card-news p-3">
+    <h5>🧠 แนวทาง Stroke Fast Track</h5>
+    <p>คลิกเพื่อดูเอกสาร</p>
+  </div>
+</a>
+
+ <div class="card card-news p-3">
+  <h5>📊 สถิติการปฏิบัติงาน EMS</h5>
+  <p>รายงานผลการปฏิบัติงานประจำเดือน...</p>
+ </div>
+</div>
+
+<!-- SIDE -->
+<div class="col-md-4">
+ <h4 class="mb-3">🔗 เมนูลัด</h4>
+
+ <a href="ems.html" class="quick-btn">🚑 เข้าระบบ EMS</a>
+ <a href="dashboard.html" class="quick-btn">📊 Dashboard ศูนย์</a>
+ <a href="#" class="quick-btn">📞 ติดต่อฉุกเฉิน</a>
+
+ <h5 class="mt-4">📍 ติดต่อ</h5>
+ <p>
+ โรงพยาบาลพระมงกุฎเกล้า<br>
+ โทร: 023549999 / 93390 <br>
+ EMS Center
+ </p>
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer text-center">
+ <div>© หน่วยบริการการแพทย์ฉุกเฉินพระมงกุฎเกล้า</div>
+ <small style="opacity:0.7;">ผู้พัฒนาระบบ: นาย ศุภณัฐ มูลสาร</small>
+</div>
+
+</body>
+</html>

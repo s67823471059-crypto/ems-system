@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EMS Unit</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<style>
+body{font-family:'Prompt';background:#0d1117;color:white;text-align:center;}
+.timer{font-size:120px;color:#00e676;}
+button{width:95%;padding:20px;margin:5px;font-size:20px;}
+</style>
+</head>
+
+<body>
+
+<h2>🚑 EMS หน้างาน</h2>
+<h3 id="time"></h3>
+
+<div id="timer" class="timer">00:00</div>
+
+<input id="name" placeholder="ชื่อผู้ป่วย">
+<input id="location" placeholder="สถานที่">
+
+<select id="hospital">
+<option>โรงพยาบาลพระมงกุฎ</option>
+<option>โรงพยาบาลราชวิถี</option>
+<option>โรงพยาบาลรามาธบดีฯ</option>
+<option>สถาบันประสาทฯ</option>
+<option>โรงพยาบาลพญาไท สะพายควาย</option>
+<option>โรงพยาบาลพญาไท 1</option>
+<option>โรงพยาบาลพญาไท2</option>
+<option>โรงพยาบาลเปาโลเกษตรฯ</option>
+</select>
+
+<button onclick="start()">⏱️ เริ่มประสาน</button>
+<button onclick="stop()">หยุด</button>
+
+<button onclick="exportExcel()">📊 Export</button>
+
+<script>
+setInterval(()=>{
+ time.innerText=new Date().toLocaleString("th-TH",{timeZone:"Asia/Bangkok"});
+},1000);
+
+let sec=0,interval;
+
+function start(){
+ sec=0;
+ interval=setInterval(()=>{
+  sec++;
+  timer.innerText=Math.floor(sec/60)+":"+sec%60;
+ },1000);
+}
+
+function stop(){
+ clearInterval(interval);
+}
+
+function exportExcel(){
+ let data=[{time:sec,name:name.value}];
+ let ws=XLSX.utils.json_to_sheet(data);
+ let wb=XLSX.utils.book_new();
+ XLSX.utils.book_append_sheet(wb,ws,"EMS");
+ XLSX.writeFile(wb,"EMS.xlsx");
+}
+</script>
+
+</body>
+</html>
